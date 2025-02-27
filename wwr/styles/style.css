@@ -1,5 +1,10 @@
 #background {
     height: 725px;
+    background-color:rgb(20,30,13)
+}
+#content {
+    max-width:1600px;
+    margin:0 auto;
 }
 body {
     background-color: #fcfbfb; 
@@ -21,10 +26,37 @@ nav a {
     text-align: center;
     color: #fcfbfb;
     text-decoration: none;
+    text-align: center;
 }    
 footer p {
     font-size: 1.2em;
+    text-decoration:none;
 }    
+footer p a {
+    text-decoration:none;
+    color:#cb4154;
+}
 footer p a:hover {
     text-decoration: underline;
+    color:#702963
 }    
+#hero-msg h1 {
+    text-align: center;
+}
+#hero-msg h4 {
+    text-align: center;
+}
+.button-box {
+    text-align: center;
+}
+main section {
+    text-align: center;
+}
+.book {
+    text-decoration:none;
+    background-color:#b2ffff
+}
+.join {
+    text-decoration:none;
+    background-color:#b2ffff
+}
