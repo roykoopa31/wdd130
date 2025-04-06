@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
 <header>
     <img class="logo" src="images/countries-1.png" alt="countriesuniteLogo">
     <nav>
@@ -7,6 +13,7 @@
         <a href="menu.html">Menu</a>
         <a href="locations.html">locations</a>
     </nav>
+    <link rel="stylesheet" href="styles/style.css">
 </header>
 <main>
 <h1>We have 10 open locations currently, with many more on the way</h1>
@@ -50,23 +57,53 @@
 <p>
     Tokyo, Japan location
 </p>
-<img class="logo" src="images/countriesunitetokyo.jpg" alt="countriesuniteLogo">
-<p>
-    Rome, Italy location
-</p>
-<img class="logo" src="images/countriesuniterome.jpg" alt="countriesuniteLogo">
-<p>
-    Washington DC, USA location
-</p>
-<img class="logo" src="images/countriesunitewashingtondc.jpg" alt="countriesuniteLogo">
-<p>
-    Los Angeles, USA location
-</p>
-<img class="logo" src="images/countriesunitelosangeles.jpg" alt="countriesuniteLogo">
-<p>
-    Upcoming Sydney, Australia location
-</p>
-<img class="logo" src="images/countriesuniteupcomingaustralia.jpg" alt="countriesuniteLogo">
+<div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 5</div>
+      <img src="images/countriesunitetokyo.jpg" style="width:100%">
+      <div class="text">Tokyo, Japan Location</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 5</div>
+      <img src="images/countriesuniterome.jpg" style="width:100%">
+      <div class="text">Rome, Italy Location</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 5</div>
+      <img src="images/countriesunitewashingtondc.jpg" style="width:100%">
+      <div class="text">Washington DC, United States Location</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">4 / 5</div>
+        <img src="images/countriesunitelosangeles.jpg" style="width:100%">
+        <div class="text">Los Angeles, United States Location</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">5 / 5</div>
+        <img src="images/countriesuniteupcomingaustralia.jpg" style="width:100%">
+        <div class="text">Upcoming Sydney, Australia Location</div>
+    </div>
+  
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+  
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+  </div>
 </main>
 <footer>
     <p>
@@ -75,4 +112,35 @@
     <img class="logo" src="images/countries-1.png" alt="countriesuniteLogo">
     <a href="site-plan.html">Site Plan</a>
 </footer>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</body>
 </html>
