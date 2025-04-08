@@ -26,8 +26,19 @@ body{
 font-family: Iansui, 'Times New Roman', Times, serif
 }
 
-h1,h2,h4,h5,h6{
+h1,h2,h3,h4,h5,h6{
 font-family: "Rock Salt", 'Times New Roman', Times, serif;
+}
+.center{
+    text-align:center;
+}
+.centered{
+    display:block;
+    margin:0 auto;
+    width:200px;
+}
+.large{
+    font-size:larger
 }
 
 * {box-sizing:border-box}
@@ -139,6 +150,7 @@ header {
 nav {
     display: flex;
     justify-content: space-around;
+    align-items:center;
 }
 nav a:hover {
     background-color: black;
